@@ -4,12 +4,13 @@
   "private": true,
   
   "scripts": {
-    "repository:deploy": "cdk deploy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.DockerRepositoryApp\"",
-    "repository:destroy": "cdk destroy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.DockerRepositoryApp\"",
-    "network:deploy": "cdk deploy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.NetworkApp\"",
-    "network:destroy": "cdk destroy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.NetworkApp\"",
-    "service:deploy": "cdk deploy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.ServiceApp\"",
-    "service:destroy": "cdk destroy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.ServiceApp\""
+    "bootstrap": "cdk bootstrap --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.DockerRepositoryApp\"",
+    "repository:deploy": "cdk deploy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.DockerRepositoryApp\" --require-approval never",
+    "repository:destroy": "cdk destroy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.DockerRepositoryApp\" --require-approval never",
+    "network:deploy": "cdk deploy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.NetworkApp\" --require-approval never",
+    "network:destroy": "cdk destroy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.NetworkApp\" --require-approval never",
+    "service:deploy": "cdk deploy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.ServiceApp\" --require-approval never",
+    "service:destroy": "cdk destroy --profile stratospheric --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=dev.rsandtner.stratospheric.ServiceApp\" --require-approval never"
   },
   
   "devDependencies": {
